@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default async function PublicNotePage({
   params,
 }: {
@@ -5,8 +7,11 @@ export default async function PublicNotePage({
 }) {
   const { slug } = await params;
   return (
-    <main>
+    <main className="flex flex-col gap-4 p-8">
       <p>Public note: {slug}</p>
+      <nav className="flex gap-4 underline">
+        <Link href="/">Startseite</Link>
+      </nav>
     </main>
   );
 }

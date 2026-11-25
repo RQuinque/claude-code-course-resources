@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default async function NotePage({
   params,
 }: {
@@ -5,8 +7,12 @@ export default async function NotePage({
 }) {
   const { id } = await params;
   return (
-    <main>
+    <main className="flex flex-col gap-4 p-8">
       <p>Note editor: {id}</p>
+      <nav className="flex gap-4 underline">
+        <Link href="/dashboard">Zurück zum Dashboard</Link>
+        <Link href="/p/demo">Öffentliche Ansicht</Link>
+      </nav>
     </main>
   );
 }
